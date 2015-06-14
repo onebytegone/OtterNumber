@@ -10,27 +10,30 @@ import UIKit
 import XCTest
 
 class OtterNumberTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+   func testlimitValue() {
+      var otter = OtterNumber()
+      XCTAssertEqual(0, otter.limitValue(0, min: 0, max: 5))
+      XCTAssertEqual(1, otter.limitValue(1, min: 0, max: 5))
+      XCTAssertEqual(2, otter.limitValue(2, min: 0, max: 5))
+      XCTAssertEqual(3, otter.limitValue(3, min: 0, max: 5))
+      XCTAssertEqual(4, otter.limitValue(4, min: 0, max: 5))
+      XCTAssertEqual(0, otter.limitValue(5, min: 0, max: 5))
+      XCTAssertEqual(1, otter.limitValue(6, min: 0, max: 5))
+      XCTAssertEqual(2, otter.limitValue(7, min: 0, max: 5))
+      XCTAssertEqual(3, otter.limitValue(8, min: 0, max: 5))
+
+      XCTAssertEqual(9, otter.limitValue(4, min: 5, max: 10))
+      XCTAssertEqual(5, otter.limitValue(5, min: 5, max: 10))
+      XCTAssertEqual(6, otter.limitValue(6, min: 5, max: 10))
+      XCTAssertEqual(9, otter.limitValue(9, min: 5, max: 10))
+      XCTAssertEqual(5, otter.limitValue(10, min: 5, max: 10))
+      XCTAssertEqual(6, otter.limitValue(11, min: 5, max: 10))
+
+      XCTAssertEqual(-15, otter.limitValue(0, min: -15, max: -10))
+      XCTAssertEqual(-14, otter.limitValue(1, min: -15, max: -10))
+      XCTAssertEqual(-13, otter.limitValue(2, min: -15, max: -10))
+      XCTAssertEqual(-12, otter.limitValue(3, min: -15, max: -10))
+      XCTAssertEqual(-11, otter.limitValue(4, min: -15, max: -10))
+      XCTAssertEqual(-15, otter.limitValue(0, min: -15, max: -10))
+   }
 }
