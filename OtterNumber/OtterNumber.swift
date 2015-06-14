@@ -8,18 +8,18 @@
 
 import Foundation
 
-class OtterNumber {
+public class OtterNumber {
    var algorithm: OtterNumberAlgorithm = MersenneTwister(seed: 42)
 
-   func createSeed() -> Int {
+   public func createSeed() -> Int {
       return Int(NSDate.timeIntervalSinceReferenceDate()*100000)
    }
 
-   func prepare(seed: Int) {
+   public func prepare(seed: Int) {
       algorithm = MersenneTwister(seed: seed)
    }
 
-   func generate(min: Int, max: Int) -> Int {
+   public func generate(min: Int, max: Int) -> Int {
       var randomValue = algorithm.generate()
       return limitValue(randomValue, min: min, max: max)
    }
@@ -34,12 +34,12 @@ class OtterNumber {
     *
     * :returns: Mapped value
     */
-   func limitValue(value: Int, min: Int, max: Int) -> Int {
+   public func limitValue(value: Int, min: Int, max: Int) -> Int {
       let sizeOfRange = max - min
       return ( value % sizeOfRange ) + min
    }
 }
 
-protocol OtterNumberAlgorithm {
+public protocol OtterNumberAlgorithm {
    func generate() -> Int
 }

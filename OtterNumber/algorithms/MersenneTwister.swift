@@ -10,7 +10,7 @@
 
 import Foundation
 
-class MersenneTwister : OtterNumberAlgorithm {
+public class MersenneTwister : OtterNumberAlgorithm {
    private(set) var initialSeed: Int = 0
    private var numbers: Array<Int> = []
    private var index = 0
@@ -21,7 +21,7 @@ class MersenneTwister : OtterNumberAlgorithm {
       index = 0
    }
 
-   func generate() -> Int {
+   public func generate() -> Int {
       if index == 0 {
          self.numbers = generateNumberSet(self.numbers)
       }
@@ -38,7 +38,7 @@ class MersenneTwister : OtterNumberAlgorithm {
       return x
    }
 
-   func prepare(seed: Int) -> Array<Int> {
+   public func prepare(seed: Int) -> Array<Int> {
       // Limit seed to 32 bits
       var adjustedSeed = seed & 0xFFFFFFFF
 
