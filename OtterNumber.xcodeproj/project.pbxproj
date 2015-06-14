@@ -12,6 +12,9 @@
 		3E0DDD411B2BCC0900461E19 /* OtterNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DDD401B2BCC0900461E19 /* OtterNumberTests.swift */; };
 		3E0DDD4D1B2BCC2C00461E19 /* OtterNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DDD4C1B2BCC2C00461E19 /* OtterNumber.swift */; };
 		3E0DDD521B2BCD0600461E19 /* OtterNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DDD4C1B2BCC2C00461E19 /* OtterNumber.swift */; };
+		3EAEB6311B2DB5AA004998D7 /* MersenneTwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEB6301B2DB5AA004998D7 /* MersenneTwister.swift */; };
+		3EAEB6321B2DB610004998D7 /* MersenneTwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEB6301B2DB5AA004998D7 /* MersenneTwister.swift */; };
+		3EAEB6341B2DBBE9004998D7 /* MersenneTwisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEB6331B2DBBE9004998D7 /* MersenneTwisterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,8 @@
 		3E0DDD3F1B2BCC0900461E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E0DDD401B2BCC0900461E19 /* OtterNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterNumberTests.swift; sourceTree = "<group>"; };
 		3E0DDD4C1B2BCC2C00461E19 /* OtterNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtterNumber.swift; sourceTree = "<group>"; };
+		3EAEB6301B2DB5AA004998D7 /* MersenneTwister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MersenneTwister.swift; sourceTree = "<group>"; };
+		3EAEB6331B2DBBE9004998D7 /* MersenneTwisterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MersenneTwisterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 		3E0DDD301B2BCC0800461E19 /* OtterNumber */ = {
 			isa = PBXGroup;
 			children = (
+				3E0DDD4E1B2BCCE500461E19 /* algorithms */,
 				3E0DDD331B2BCC0800461E19 /* OtterNumber.h */,
 				3E0DDD4C1B2BCC2C00461E19 /* OtterNumber.swift */,
 				3E0DDD311B2BCC0800461E19 /* Supporting Files */,
@@ -92,6 +98,7 @@
 		3E0DDD3D1B2BCC0900461E19 /* OtterNumberTests */ = {
 			isa = PBXGroup;
 			children = (
+				3E0DDD531B2BCE6B00461E19 /* algorithms */,
 				3E0DDD401B2BCC0900461E19 /* OtterNumberTests.swift */,
 				3E0DDD3E1B2BCC0900461E19 /* Supporting Files */,
 			);
@@ -104,6 +111,22 @@
 				3E0DDD3F1B2BCC0900461E19 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E0DDD4E1B2BCCE500461E19 /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				3EAEB6301B2DB5AA004998D7 /* MersenneTwister.swift */,
+			);
+			path = algorithms;
+			sourceTree = "<group>";
+		};
+		3E0DDD531B2BCE6B00461E19 /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				3EAEB6331B2DBBE9004998D7 /* MersenneTwisterTests.swift */,
+			);
+			path = algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0DDD4D1B2BCC2C00461E19 /* OtterNumber.swift in Sources */,
+				3EAEB6311B2DB5AA004998D7 /* MersenneTwister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +247,8 @@
 			files = (
 				3E0DDD521B2BCD0600461E19 /* OtterNumber.swift in Sources */,
 				3E0DDD411B2BCC0900461E19 /* OtterNumberTests.swift in Sources */,
+				3EAEB6321B2DB610004998D7 /* MersenneTwister.swift in Sources */,
+				3EAEB6341B2DBBE9004998D7 /* MersenneTwisterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

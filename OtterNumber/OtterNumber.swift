@@ -9,20 +9,19 @@
 import Foundation
 
 class OtterNumber {
-   var algorithm: OtterNumberAlgorithm = Crayfish()
+   var algorithm: OtterNumberAlgorithm = MersenneTwister(seed: 42)
 
    func createSeed() -> Int {
       return Int(NSDate.timeIntervalSinceReferenceDate()*100000)
    }
 
-
-   func generate(min: Int, max: Int) -> Int {
-      return generate(createSeed(), min: min, max: max)
+   func prepare(seed: Int) {
+      algorithm = MersenneTwister(seed: seed)
    }
 
-
-   func generate(seed: Int, min: Int, max: Int) -> Int {
-      return algorithm.generate(seed, min: min, max: max)
+   func generate(min: Int, max: Int) -> Int {
+      var randomValue = algorithm.generate()
+      return limitValue(randomValue, min: min, max: max)
    }
 
 
@@ -42,5 +41,5 @@ class OtterNumber {
 }
 
 protocol OtterNumberAlgorithm {
-   func generate(seed: Int, min: Int, max: Int) -> Int
+   func generate() -> Int
 }
