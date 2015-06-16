@@ -11,6 +11,8 @@ import Foundation
 public class OtterNumber {
    var algorithm: OtterNumberAlgorithm = MersenneTwister(seed: 42)
 
+   public init() { }
+
    public func createSeed() -> Int64 {
       return Int64(NSDate.timeIntervalSinceReferenceDate()*100000)
    }
