@@ -11,17 +11,17 @@
 import Foundation
 
 public class MersenneTwister : OtterNumberAlgorithm {
-   private(set) var initialSeed: Int = 0
-   private var numbers: Array<Int> = []
+   private(set) var initialSeed: Int64 = 0
+   private var numbers: Array<Int64> = []
    private var index = 0
 
-   init(seed: Int) {
+   init(seed: Int64) {
       self.initialSeed = seed
       self.numbers = prepare(seed)
       index = 0
    }
 
-   public func generate() -> Int {
+   public func generate() -> Int64 {
       if index == 0 {
          self.numbers = generateNumberSet(self.numbers)
       }
@@ -38,11 +38,11 @@ public class MersenneTwister : OtterNumberAlgorithm {
       return x
    }
 
-   public func prepare(seed: Int) -> Array<Int> {
+   public func prepare(seed: Int64) -> Array<Int64> {
       // Limit seed to 32 bits
       var adjustedSeed = seed & 0xFFFFFFFF
 
-      var VL = [Int](count: 624, repeatedValue: 0)
+      var VL = [Int64](count: 624, repeatedValue: 0)
       VL[0] = adjustedSeed
 
       for i in 1...623 {
@@ -57,8 +57,8 @@ public class MersenneTwister : OtterNumberAlgorithm {
       return VL
    }
 
-   func generateNumberSet(seeded: Array<Int>) -> Array<Int> {
-      var set: Array<Int> = seeded
+   func generateNumberSet(seeded: Array<Int64>) -> Array<Int64> {
+      var set: Array<Int64> = seeded
 
       for i in 0...623 {
          let x = (set[i] & 0x80000000) + (set[(i+1) % 624] & 0x7fffffff)
