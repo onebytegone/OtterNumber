@@ -10,7 +10,25 @@ import UIKit
 import XCTest
 
 class OtterNumberTests: XCTestCase {
-   func testlimitValue() {
+   func testLifecycle() {
+      var otter = OtterNumber()
+
+      otter.prepare(100)
+      XCTAssertEqual(80, otter.generate(10, max: 100))
+      XCTAssertEqual(62, otter.generate(10, max: 100))
+      XCTAssertEqual(45, otter.generate(10, max: 100))
+      XCTAssertEqual(99, otter.generate(10, max: 100))
+      XCTAssertEqual(95, otter.generate(40, max: 100))
+      XCTAssertEqual(71, otter.generate(40, max: 100))
+      XCTAssertEqual(52, otter.generate(40, max: 100))
+      XCTAssertEqual(98, otter.generate(40, max: 100))
+      XCTAssertEqual(-2, otter.generate(-10, max: 0))
+      XCTAssertEqual(-10, otter.generate(-10, max: 0))
+      XCTAssertEqual(-6, otter.generate(-10, max: 0))
+      XCTAssertEqual(-7, otter.generate(-10, max: 0))
+   }
+
+   func testLimitValue() {
       var otter = OtterNumber()
       XCTAssertEqual(0, otter.limitValue(0, min: 0, max: 5))
       XCTAssertEqual(1, otter.limitValue(1, min: 0, max: 5))
